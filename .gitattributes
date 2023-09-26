@@ -1,4 +1,5 @@
 # Do not change! Set by Modelbit.
 deployments/** filter=modelbit
 packages/** filter=modelbit
+common/** filter=modelbit
 
