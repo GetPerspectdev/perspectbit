@@ -1,0 +1,8 @@
+owner: jcrockett@nerdunited.com
+runtimeInfo:
+  mainFunction: double_number
+  mainFunctionArgs:
+    - num:float
+    - return:float
+  pythonVersion: '3.10'
+schemaVersion: 2
