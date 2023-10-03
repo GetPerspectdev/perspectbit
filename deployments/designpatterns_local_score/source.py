@@ -34,8 +34,8 @@ def designpatterns_local_score(repo_url: str = "", verbose: bool = True):
         '.ts',
         '.js'
         ]
-    os.system(f"git clone --depth 1 {repo_url} ~/tmp/curr_repo")
-    contents = [f for f in os.listdir("~/tmp/curr_repo/") if os.path.isfile(f)]
+    os.system(f"git clone --depth 1 {repo_url} /tmp/curr_repo")
+    contents = [f for f in os.listdir("/tmp/curr_repo/") if os.path.isfile(f)]
     files = {}
     for file in contents:
         with open(file, 'r') as f:
@@ -105,7 +105,7 @@ def designpatterns_local_score(repo_url: str = "", verbose: bool = True):
     for key in avgs.keys():
         avgs[key] = float(sum(avgs[key])/len(avgs[key]))
     
-    rmtree("~/tmp/curr_repo", ignore_errors=True)
+    rmtree("/tmp/curr_repo", ignore_errors=True)
 
     if verbose:
         print({
