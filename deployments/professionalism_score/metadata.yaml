@@ -6,4 +6,6 @@ runtimeInfo:
     - user_id:str
     - verbose:bool
   pythonVersion: '3.10'
+  systemPackages:
+    - cmake
 schemaVersion: 2

@@ -1,11 +1,11 @@
 _: MBFileStub
-contentHash: sha1:6a89b1c085c6b9afbaed21833faabb9b4a29adbf
-createdAt: 2023-10-03 17:18:15
+contentHash: sha1:017221d37b3cc4c5c3fbb29f8fa823bbf41800db
+createdAt: 2023-10-03 21:53:24
 metadata:
   fileSize: 1183
   object:
     class: LlamaCpp
-    description: LlamaCpp(cache=None, verbose=True, callbacks=<langchain.callbacks.manager.CallbackManager object at 0x2b72968f0>, tags=None, metadata=None, client=<llama_cpp.llama.Llama object at 0x2b7296950>, model_path='./test_model/mistral-7b-instruct-v0.1.Q4_0.gguf', lora_base=None, lora_path=None, n_ctx=32000, n_parts=-1, seed=8855, f16_kv=True, logits_all=False, vocab_only=False, use_mlock=False, n_threads=1, n_batch=512, n_gpu_layers=100, suffix=None, max_tokens=100, temperature=0.75, top_p=1.0, logprobs=None, echo=False, stop=[], repeat_penalty=1.1, top_k=40, last_n_tokens_size=64, use_mmap=True, rope_freq_scale=1.0, rope_freq_base=10000.0, model_kwargs={}, streaming=True, grammar_path=None, grammar=None)
+    description: LlamaCpp(cache=None, verbose=True, callbacks=<langchain.callbacks.manager.CallbackManager object at 0x1079c5d20>, tags=None, metadata=None, client=<llama_cpp.llama.Llama object at 0x2c0dcbc40>, model_path='./test_model/mistral-7b-instruct-v0.1.Q4_0.gguf', lora_base=None, lora_path=None, n_ctx=32000, n_parts=-1, seed=8855, f16_kv=True, logits_all=False, vocab_only=False, use_mlock=False, n_threads=1, n_batch=512, n_gpu_layers=100, suffix=None, max_tokens=100, temperature=0.75, top_p=1.0, logprobs=None, echo=False, stop=[], repeat_penalty=1.1, top_k=40, last_n_tokens_size=64, use_mmap=True, rope_freq_scale=1.0, rope_freq_base=10000.0, model_kwargs={}, streaming=True, grammar_path=None, grammar=None)
     module: langchain.llms.llamacpp
     package: langchain==0.0.289
 schemaVersion: 1

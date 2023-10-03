@@ -11,16 +11,6 @@ import numpy as np
 embedder = modelbit.load_value("data/embedder.pkl") # SentenceTransformer( (0): Transformer({'max_seq_length': 256, 'do_lower_case': False}) with Transformer model: BertModel (1): Pooling({'word_embedding_dimension': 384, 'pooling_mode_cls_token': False,...
 llm = modelbit.load_value("data/llm.pkl") # [1mLlamaCpp[0m Params: {'model_path': './test_model/mistral-7b-instruct-v0.1.Q4_0.gguf', 'suffix': None, 'max_tokens': 100, 'temperature': 0.75, 'top_p': 1.0, 'logprobs': None, 'echo': False, 'stop_...
 
-def load_ds_and_idx(idx, ds_folder, index_folder):
-        files = os.listdir(ds_folder)
-        files.sort()
-        vectorDB = load_dataset('csv', data_files=f"{ds_folder}/{files[idx]}", split='train')
-        files = os.listdir(index_folder)
-        files.sort()
-        vectorDB.load_faiss_index('embedding', f"{index_folder}/{files[idx]}")
-        return vectorDB
-
-
 def _get_slack_diff(user_id: str = None, slack_token: str = None):
         import slack_sdk
         import pandas as pd
@@ -74,8 +64,8 @@ def professionalism_score(slack_token: str = "", user_id: str = None, verbose: b
     import tiktoken
     tiktoker = tiktoken.encoding_for_model('gpt-3.5-turbo')
 
-    vectorDB = load_ds_and_idx(1, './data/', './indexes/')
-
+    vectorDB = load_dataset('csv', data_files='3_professionalism_embedded_dataset.csv', split='train')
+    vectorDB.load_faiss_index('embedding', '3_professionalism_index.faiss')
 
     number_template = """Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
     ###Instruction:
