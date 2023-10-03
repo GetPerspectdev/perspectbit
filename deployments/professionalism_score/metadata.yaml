@@ -1,0 +1,10 @@
+owner: cbrousseau@nerdunited.com
+runtimeInfo:
+  mainFunction: professionalism_score
+  mainFunctionArgs:
+    - self:Any
+    - slack_token:str
+    - user_id:str
+    - verbose:bool
+  pythonVersion: '3.10'
+schemaVersion: 2
