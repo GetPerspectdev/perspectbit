@@ -1,0 +1,8 @@
+owner: cbrousseau@nerdunited.com
+runtimeInfo:
+  mainFunction: designpatterns_local_score
+  mainFunctionArgs:
+    - repo_url:str
+    - verbose:bool
+  pythonVersion: '3.10'
+schemaVersion: 2
