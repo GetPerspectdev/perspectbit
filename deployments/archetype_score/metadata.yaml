@@ -1,0 +1,9 @@
+owner: cbrousseau@nerdunited.com
+runtimeInfo:
+  mainFunction: archetype_score
+  mainFunctionArgs:
+    - user_token:str
+    - repo_name:str
+    - verbose:bool
+  pythonVersion: '3.10'
+schemaVersion: 2
