@@ -13,8 +13,8 @@ embedder = modelbit.load_value("data/embedder.pkl") # SentenceTransformer( (0): 
 
 # main function
 def designpatterns_local_score(repo_url: str = "", verbose: bool = True):
-    vectorDB = load_dataset('csv', data_files="./2_design_patterns_embedded_dataset.csv")
-    vectorDB.load_faiss_index('embedding', './2_designpattern_index.faiss')
+    vectorDB = load_dataset('csv', data_files="2_design_patterns_embedded_dataset.csv")
+    vectorDB.load_faiss_index('embedding', '2_designpattern_index.faiss')
 
     CODE_FILES = [
         '.cgi',
