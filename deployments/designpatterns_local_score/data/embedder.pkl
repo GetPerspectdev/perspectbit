@@ -1,8 +1,8 @@
 _: MBFileStub
-contentHash: sha1:6a4cea4175ee57d01659740666fdd835b1ff1d25
-createdAt: 2023-10-03 15:57:03
+contentHash: sha1:c792d70336e0e86b06879824dbb097db6df88148
+createdAt: 2023-10-03 17:51:45
 metadata:
-  fileSize: 91392020
+  fileSize: 91392004
   object:
     class: SentenceTransformer
     description: "SentenceTransformer(\n  (0): Transformer({'max_seq_length': 256, 'do_lower_case': False}) with Transformer model: BertModel \n  (1): Pooling({'word_embedding_dimension': 384, 'pooling_mode_cls_token': False, 'pooling_mode_mean_tokens': True, 'pooling_mode_max_tokens': False, 'pooling_mode_mean_sqrt_len_tokens': False})\n  (2): Normalize()\n)"

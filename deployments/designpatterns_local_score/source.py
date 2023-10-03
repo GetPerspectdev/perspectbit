@@ -11,19 +11,10 @@ import json
 
 embedder = modelbit.load_value("data/embedder.pkl") # SentenceTransformer( (0): Transformer({'max_seq_length': 256, 'do_lower_case': False}) with Transformer model: BertModel (1): Pooling({'word_embedding_dimension': 384, 'pooling_mode_cls_token': False,...
 
-def load_ds_and_idx(idx, ds_folder, index_folder):
-        files = os.listdir(ds_folder)
-        files.sort()
-        vectorDB = load_dataset('csv', data_files=f"{ds_folder}/{files[idx]}", split='train')
-        files = os.listdir(index_folder)
-        files.sort()
-        vectorDB.load_faiss_index('embedding', f"{index_folder}/{files[idx]}")
-        return vectorDB
-
-
 # main function
 def designpatterns_local_score(repo_url: str = "", verbose: bool = True):
-    vectorDB = load_ds_and_idx(0, './data/', './indexes/')
+    vectorDB = load_dataset('csv', data_files="./2_design_patterns_embedded_dataset.csv")
+    vectorDB.load_faiss_index('embedding', './2_designpattern_index.faiss')
 
     CODE_FILES = [
         '.cgi',
