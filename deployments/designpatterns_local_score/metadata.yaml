@@ -5,4 +5,6 @@ runtimeInfo:
     - repo_url:str
     - verbose:bool
   pythonVersion: '3.10'
+  systemPackages:
+    - git
 schemaVersion: 2
