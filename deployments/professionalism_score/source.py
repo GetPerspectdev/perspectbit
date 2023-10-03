@@ -67,7 +67,7 @@ def _get_slack_diff(user_id: str = None, slack_token: str = None):
 
 
 # main function
-def professionalism_score(self, slack_token: str = "", user_id: str = None, verbose: bool = True):
+def professionalism_score(slack_token: str = "", user_id: str = None, verbose: bool = True):
     if user_id == None:
         import slack_sdk
     import pandas as pd
