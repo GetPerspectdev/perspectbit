@@ -2,7 +2,7 @@ owner: cbrousseau@nerdunited.com
 runtimeInfo:
   mainFunction: designpatterns_local_score
   mainFunctionArgs:
-    - user_token:str
+    - repo_url:str
     - verbose:bool
   pythonVersion: '3.10'
   systemPackages:
