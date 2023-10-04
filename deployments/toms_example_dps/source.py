@@ -43,15 +43,18 @@ def designpatterns_local_score(repo_url: str = "", verbose: bool = True):
     files = {}
     for file in contents:
         with open(file, 'r') as f:
-            content = f.read()
-            embed = embedder.encode(content)
-            query = np.array(embed, dtype=np.float32)
-            score, samples = vectorDB.get_nearest_examples('embedding', query, k=1)
-            files[file] = {
-                'score': score, 
-                'samples': samples, 
-                'content': content, 
-                }
+            try:
+                content = f.read()
+                embed = embedder.encode(content)
+                query = np.array(embed, dtype=np.float32)
+                score, samples = vectorDB.get_nearest_examples('embedding', query, k=1)
+                files[file] = {
+                    'score': score, 
+                    'samples': samples, 
+                    'content': content, 
+                    }
+            except UnicodeDecodeError:
+                pass # binary file
 
     pp = []
     scores = []
