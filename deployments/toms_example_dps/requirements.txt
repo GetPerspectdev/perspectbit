@@ -1,0 +1,5 @@
+datasets==2.14.5
+faiss-cpu==1.7.4
+numpy==1.25.2
+pygithub==1.59.1
+sentence-transformers==2.2.2
