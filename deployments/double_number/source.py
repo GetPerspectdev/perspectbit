@@ -8,6 +8,7 @@ def double_number(num: float) -> float:
     >>> double_number(21)
     42
     """
+    print("Hello, I am a nerdy test.")
     return 2 * num
 
 # to run locally via git & terminal, uncomment the following lines

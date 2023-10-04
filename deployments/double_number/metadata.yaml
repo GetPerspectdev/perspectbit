@@ -1,8 +1,8 @@
-owner: jcrockett@nerdunited.com
+owner: bdemars@nerdunited.com
 runtimeInfo:
   mainFunction: double_number
   mainFunctionArgs:
     - num:float
     - return:float
-  pythonVersion: '3.10'
+  pythonVersion: '3.9'
 schemaVersion: 2
