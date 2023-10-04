@@ -36,6 +36,7 @@ def designpatterns_local_score(repo_url: str = "", verbose: bool = True):
         '.js'
         ]
     repo_path = "/tmp/curr_repo"
+    rmtree(repo_path, ignore_errors=True)
     result = subprocess.run(["git", "clone", "--depth=1", repo_url, repo_path], check=True)
     repo_files = [os.path.join(repo_path, f) for f in os.listdir(repo_path)]
     contents = [f for f in repo_files if os.path.isfile(f)]
@@ -114,7 +115,7 @@ def designpatterns_local_score(repo_url: str = "", verbose: bool = True):
     for key in avgs.keys():
         avgs[key] = float(sum(avgs[key])/len(avgs[key]))
     
-    rmtree("/tmp/curr_repo", ignore_errors=True)
+    rmtree(repo_path, ignore_errors=True)
 
     if verbose:
         print({
