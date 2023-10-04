@@ -37,7 +37,8 @@ def designpatterns_local_score(repo_url: str = "", verbose: bool = True):
         ]
     result = subprocess.run(["git", "clone", "--depth=1", repo_url, "/tmp/curr_repo"], check=True)
     contents = [f for f in os.listdir("/tmp/curr_repo/") if os.path.isfile(f)]
-    print("Contents found:", ", ".join(contents))
+    print("Directories:", [d for d in os.listdir("/tmp/curr_repo/") if not os.path.isfile(d)])
+    print("Contents found:", contents)
     files = {}
     for file in contents:
         with open(file, 'r') as f:
