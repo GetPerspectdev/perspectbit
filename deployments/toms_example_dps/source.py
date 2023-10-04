@@ -129,7 +129,7 @@ def designpatterns_local_score(repo_url: str = "", verbose: bool = True):
         "occurance": dict(occurence),
         "averages": avgs,
     })
-    return json.dumps({
+    return {
         "design_pattern": bool(eval), 
         "repo_url": repo_url, 
         "overall_score": str(score), 
@@ -139,7 +139,7 @@ def designpatterns_local_score(repo_url: str = "", verbose: bool = True):
         "files": np.asarray(pp).tolist(),
         "occurance": dict(occurence),
         "averages": avgs,
-    })
+    }
 
 # to run locally via git & terminal, uncomment the following lines
 # if __name__ == "__main__":
