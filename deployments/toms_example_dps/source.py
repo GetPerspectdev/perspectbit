@@ -36,9 +36,8 @@ def designpatterns_local_score(repo_url: str = "", verbose: bool = True):
         '.js'
         ]
     result = subprocess.run(["git", "clone", "--depth=1", repo_url, "/tmp/curr_repo"], check=True)
-    print("---------------git result", result)
     contents = [f for f in os.listdir("/tmp/curr_repo/") if os.path.isfile(f)]
-    print("-----------listdir", os.listdir("/tmp/curr_repo/"))
+    print("Contents found:", ", ".join(contents))
     files = {}
     for file in contents:
         with open(file, 'r') as f:
@@ -58,6 +57,7 @@ def designpatterns_local_score(repo_url: str = "", verbose: bool = True):
     resources = []
     avgs = {}
     for k, v in files.items():
+        print(f"Checking file {k}")
         scores.append(v['score'])
         patterns.append(v['samples']['Design Pattern'])
         if v['samples']['Design Pattern'][0] not in avgs:
@@ -95,6 +95,7 @@ def designpatterns_local_score(repo_url: str = "", verbose: bool = True):
     eval = score>0.75
     top_pattern = "nothing"
     bot_pattern = "nothing"
+    print("Patterns", patterns)
     if len(patterns) > 0:
         occurence = Counter()
         for i in patterns:
