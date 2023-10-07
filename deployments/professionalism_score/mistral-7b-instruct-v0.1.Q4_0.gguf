@@ -1,0 +1,10 @@
+_: MBFileStub
+contentHash: sha1:1470eabf3908ce7bf9f801bd7415d67c9a083191
+createdAt: 2023-10-07 18:09:26
+metadata:
+  fileSize: 4108916384
+  object:
+    class: bytes
+    description: ''
+    module: builtins
+schemaVersion: 1

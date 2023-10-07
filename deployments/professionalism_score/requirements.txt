@@ -1,6 +1,5 @@
 datasets==2.14.5
 faiss-cpu==1.7.4
 langchain==0.0.289
-llama-cpp-python==0.2.11
 numpy==1.25.2
 sentence-transformers==2.2.2
