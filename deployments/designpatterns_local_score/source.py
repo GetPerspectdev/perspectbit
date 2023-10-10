@@ -15,6 +15,7 @@ embedder = modelbit.load_value("data/embedder.pkl") # SentenceTransformer( (0): 
 def designpatterns_local_score(repo_url: str = "", verbose: bool = True):
     vectorDB = load_dataset('csv', data_files="2_design_patterns_embedded_dataset.csv", split='train')
     vectorDB.load_faiss_index('embedding', '2_designpattern_index.faiss')
+    df_pattern = pd.read_csv("./data/Design_Patterns.csv")
 
     repo_path = "/tmp/curr_repo"
     rmtree(repo_path, ignore_errors=True)
@@ -45,6 +46,7 @@ def designpatterns_local_score(repo_url: str = "", verbose: bool = True):
     for k, v in files.items():
         scores.append(v['score'])
         patterns.append(v['samples']['Design Pattern'])
+        resources.append(v['samples']['Unnamed: 4'])
         if v['samples']['Design Pattern'][0] not in avgs:
             avgs[v['samples']['Design Pattern'][0]] = [v['score']]
         else:
