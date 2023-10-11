@@ -82,6 +82,8 @@ def designpatterns_local_score(repo_url: str = "", verbose: bool = True):
     eval = score>0.75
     top_pattern = "nothing"
     bot_pattern = "nothing"
+    resource = "No resource"
+    resource_name = "no resource"
     if len(patterns) > 0:
         occurence = Counter()
         for i in patterns:
@@ -90,8 +92,7 @@ def designpatterns_local_score(repo_url: str = "", verbose: bool = True):
         bot_pattern = occurence.most_common()[-3:]
     if len(resources) > 0:
         resource = max(resources, key=resources.count)
-    else:
-        resource = "No resource"
+        resource_name = max(patterns, key=patterns.count)
     for key in avgs.keys():
         avgs[key] = float(sum(avgs[key])/len(avgs[key]))
     
@@ -105,6 +106,7 @@ def designpatterns_local_score(repo_url: str = "", verbose: bool = True):
         "top_3_patterns": top_pattern,
         "bot_3_patterns": bot_pattern, 
         "resource": resource, 
+        "resource_name": resource_name,
         "files": np.asarray(pp).tolist(),
         "occurance": dict(occurence),
         "averages": avgs,
@@ -116,6 +118,7 @@ def designpatterns_local_score(repo_url: str = "", verbose: bool = True):
         "top_3_patterns": top_pattern,
         "bot_3_patterns": bot_pattern, 
         "resource": resource, 
+        "resource_name": resource_name,
         "files": np.asarray(pp).tolist(),
         "occurance": dict(occurence),
         "averages": avgs,
