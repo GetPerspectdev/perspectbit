@@ -16,7 +16,7 @@ embedder = modelbit.load_value("data/embedder.pkl") # SentenceTransformer( (0): 
 def designpatterns_local_score(repo_url: str = "", verbose: bool = True):
     vectorDB = load_dataset('csv', data_files="2_design_patterns_embedded_dataset.csv", split='train')
     vectorDB.load_faiss_index('embedding', '2_designpattern_index.faiss')
-    df_pattern = pd.read_csv("./data/Design_Patterns.csv")
+    df_pattern = pd.read_csv("./2_design_patterns_embedded_dataset.csv")
 
     repo_path = "/tmp/curr_repo"
     rmtree(repo_path, ignore_errors=True)
