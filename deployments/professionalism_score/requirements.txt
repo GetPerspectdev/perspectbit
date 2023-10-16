@@ -3,3 +3,4 @@ faiss-cpu==1.7.4
 langchain==0.0.289
 numpy==1.25.2
 sentence-transformers==2.2.2
+slack-sdk==3.23.0
