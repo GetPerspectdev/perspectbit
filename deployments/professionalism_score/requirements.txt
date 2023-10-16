@@ -5,3 +5,4 @@ numpy==1.25.2
 sentence-transformers==2.2.2
 slack-sdk==3.23.0
 tiktoken==0.5.1
+llama_cpp_python==0.2.11
