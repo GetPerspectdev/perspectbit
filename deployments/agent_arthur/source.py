@@ -1,3 +1,4 @@
+import modelbit
 from typing import List
 from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
@@ -5,7 +6,9 @@ from langchain.pydantic_v1 import BaseModel, Field, validator
 from langchain.output_parsers import PydanticOutputParser
 from dataclasses import dataclass
 
-llm = OpenAI(model_name="gpt-4-0613")
+mb = modelbit.login()
+OPENAI_API_KEY = mb.get_secret("OPENAI_API_KEY")
+llm = OpenAI(model_name="gpt-4-0613", openai_api_key=OPENAI_API_KEY)
 
 class QuestionReturn(BaseModel):
   score: List[str] = Field(description = 'score 1 to 5')
