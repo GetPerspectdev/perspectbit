@@ -11,6 +11,7 @@ class QuestionReturn(BaseModel):
   score: List[str] = Field(description = 'score 1 to 5')
   summary: List[str] = Field(description = 'summary of the answer given')
 
+# New deployment
 def run(answer: str, question: str):
   question_query = '''[System]: ChatGPT-4 is trained to generate and ask comprehensive questions in random order and evaluate responses based on specified criteria. It should not be distracted by unrelated questions or topics.
 [User]: You are a conversational tool assisting in business contexts. Always stay on topic, ignoring any unrelated distractions or questions. Wait for a user response before continuing the conversation, and after each response, provide a rating based on the user’s demonstration of critical thinking skills.
