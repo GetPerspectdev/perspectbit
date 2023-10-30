@@ -1,0 +1,8 @@
+owner: jcrockett@nerdunited.com
+runtimeInfo:
+  mainFunction: run
+  mainFunctionArgs:
+    - question:str
+    - answer:str
+  pythonVersion: '3.10'
+schemaVersion: 2
