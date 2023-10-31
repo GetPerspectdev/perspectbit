@@ -1,4 +1,3 @@
-import modelbit
 from datetime import datetime
 from typing import List
 from langchain.llms import OpenAI
@@ -7,8 +6,15 @@ from langchain.pydantic_v1 import BaseModel, Field, validator
 from langchain.output_parsers import PydanticOutputParser
 from dataclasses import dataclass
 
-mb = modelbit.login()
-OPENAI_API_KEY = mb.get_secret("OPENAI_API_KEY")
+
+if __name__ == '__main__':
+  import os
+  OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+else:
+  import modelbit
+  mb = modelbit.login()
+  OPENAI_API_KEY = mb.get_secret("OPENAI_API_KEY")
+
 llm = OpenAI(model_name="gpt-4-0613", openai_api_key=OPENAI_API_KEY)
 
 class QuestionReturn(BaseModel):
@@ -51,4 +57,5 @@ def run(answer: str, question: str):
 
 
 if __name__ == '__main__':
-  run('I would call in the Avengers', 'It\'s a well known fact that many people love cheese. I\'d immediately have our team research which cheeses are most loved and begin selling those cheese to increase revenue. Can you provide an example of how you would answer this question as well?')
+  result = run('I would call in the Avengers', 'It\'s a well known fact that many people love cheese. I\'d immediately have our team research which cheeses are most loved and begin selling those cheese to increase revenue. Can you provide an example of how you would answer this question as well?')
+  print(result)
