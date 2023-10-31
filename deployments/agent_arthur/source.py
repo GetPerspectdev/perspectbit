@@ -1,5 +1,4 @@
-# import modelbit
-import logging
+import modelbit
 from datetime import datetime
 from typing import List
 from langchain.llms import OpenAI
@@ -8,10 +7,9 @@ from langchain.pydantic_v1 import BaseModel, Field, validator
 from langchain.output_parsers import PydanticOutputParser
 from dataclasses import dataclass
 
-# mb = modelbit.login()
-# OPENAI_API_KEY = mb.get_secret("OPENAI_API_KEY")
-llm = OpenAI(model_name="gpt-4-0613")
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+mb = modelbit.login()
+OPENAI_API_KEY = mb.get_secret("OPENAI_API_KEY")
+llm = OpenAI(model_name="gpt-4-0613", openai_api_key=Config.OPENAI_API_KEY)
 
 class QuestionReturn(BaseModel):
   score: List[str] = Field(description = 'score 1 to 5')
