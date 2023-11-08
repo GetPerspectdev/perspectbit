@@ -1,0 +1,8 @@
+owner: jcrockett@nerdunited.com
+runtimeInfo:
+  mainFunction: assistantCriticalThinking
+  mainFunctionArgs:
+    - user_input_message:str
+    - thread_id:str
+  pythonVersion: '3.10'
+schemaVersion: 2
