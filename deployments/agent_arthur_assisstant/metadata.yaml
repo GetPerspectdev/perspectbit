@@ -4,5 +4,5 @@ runtimeInfo:
   mainFunctionArgs:
     - user_input_message:str
     - thread_id:str
-  pythonVersion: '3.9'
+  pythonVersion: '3.10.12'
 schemaVersion: 2
