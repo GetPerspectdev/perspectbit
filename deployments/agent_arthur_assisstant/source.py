@@ -53,8 +53,17 @@ def assistantCriticalThinking(user_input_message, thread_id):
         before = user_message.id
     )
 
+    a_message = []
     for i in range(len(messages.data)):
         value = messages.data[i].content[0].text.value
         role = messages.data[i].role
         last_message_id = messages.data[i].id
-        yield f"{value}\n"
+        a_message.append(f"{value}\n")
+
+
+        #yield f"{value}\n"
+    return a_message
+
+if __name__ == '__main__':
+  x = assistantCriticalThinking('I would call in the Avengers','thread_OCdlNdj8WTVhCkhgAXFBFOba')   
+  print(x)
