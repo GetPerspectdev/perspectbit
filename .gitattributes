@@ -2,4 +2,5 @@
 deployments/** filter=modelbit
 packages/** filter=modelbit
 common/** filter=modelbit
+registry/registry.txt filter=modelbit
 
