@@ -87,7 +87,7 @@ exitWithError() {
 }
 
 findFiles() {
-    find . -name \*.yaml | awk -F "\n" '{print "-F \042"$1"\042=@\042"$1"\042"}' | xargs curl -fs "${formatEndpoint}" || exitWithError
+    find . -name \*.yaml | awk -F "\n" '{print "-F \042"$1"\042=@\042"$1"\042"}' | xargs curl --fail-with-body -s "${formatEndpoint}" || exitWithError
 }
 
 formatFiles() {
